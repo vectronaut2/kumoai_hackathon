@@ -1,2 +1,4 @@
 notebooks/.ipynb_checkpoints/*
 models/glove/*
+.DS_Store
+*/.DS_Store
