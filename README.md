@@ -15,25 +15,35 @@ Dependencies
 
 Experiments use the processed / derived dataset from datasets/fb15k-237/exp4
 
-1) Freebase 15k cleaned dataset from Kaggle
+1) Download datasets from Kaggle
+
+- Freebase 15k cleaned dataset
 
 ```
 import kagglehub
 path = kagglehub.dataset_download("latebloomer/fb15k-237")
 ```
 
-2) Freebase vs Wiki mapping 
+- Freebase vs Wiki mapping 
 
 ```
 path = kagglehub.dataset_download("latebloomer/freebase-wikidata-mapping")
 ```
 
-3) Scrape summaries from Wikipedia
+2) Scrape summaries from Wikipedia, join back with Freebase
 
-- scripts under notebooks/wiki_processing
+- Wiki scrape scripts under notebooks/wiki_processing
+- Randomize time stamps to use prediction APIs from KumoRFM , script notebooks/v1/explore_kg_use_cases.ipynb
+- join back with Freebase
+- All train samples are before '2025-01-01' , test samples are after (notebooks/data_preprocessing/prepare_test_subset.ipynb)
 
 
-4) Randomize time stamps to use prediction APIs from KumoRFM
+## Knowledge Graph Perturbation
 
-- script notebooks/v1/explore_kg_use_cases.ipynb
+Sample pairs of edges and swap their end points
+- notebooks/exp4/freebase_perturbations.ipynb
 
+
+## Graph model and results presented in Demo
+
+notebooks/fb_exp5.ipynb
